@@ -4,7 +4,7 @@ from sqlalchemy.exc import SQLAlchemyError
 
 
 DATABASE_URI = 'postgresql+psycopg2://postgres:1111@localhost:5432/postgres'
-engine = create_engine(DATABASE_URI, echo=False)
+engine = create_engine(DATABASE_URI)
 
 Base = declarative_base()
 Session = sessionmaker(bind=engine)
@@ -33,7 +33,7 @@ class Subject(Base):
     subj_id = Column(Integer, primary_key=True)
     Name = Column(String)
     hour_per_week = Column(Integer)
-    tch_id = Column(Integer, ForeignKey("Teacher.tch_id", ondelete="CASCADE"))
+    tch_id = Column(Integer, ForeignKey("Teacher.tch_id", ondelete="CASCADE",onupdate="CASCADE"))
 
     teacher = relationship("Teacher", back_populates="subjects")
     records = relationship("Record", back_populates="subject", cascade="all, delete-orphan")
@@ -42,8 +42,8 @@ class Subject(Base):
 class Record(Base):
     __tablename__ = "Records"
     grade_id = Column(Integer, primary_key=True, autoincrement=True)
-    stud_id = Column(Integer, ForeignKey("Student.stud_id", ondelete="CASCADE"))
-    subj_id = Column(Integer, ForeignKey("Subject.subj_id", ondelete="CASCADE"))
+    stud_id = Column(Integer, ForeignKey("Student.stud_id", ondelete="CASCADE",onupdate="CASCADE"))
+    subj_id = Column(Integer, ForeignKey("Subject.subj_id", ondelete="CASCADE",onupdate="CASCADE"))
     grade = Column(Integer)
 
     student = relationship("Student", back_populates="records")

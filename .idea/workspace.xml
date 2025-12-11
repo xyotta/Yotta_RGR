@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed83d903-b3ad-4b45-a66f-f0d41a99564e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/ORM.py" beforeDir="false" afterPath="$PROJECT_DIR$/ORM.py" afterDir="false" />
-    </list>
+    <list default="true" id="ed83d903-b3ad-4b45-a66f-f0d41a99564e" name="Changes" comment="qje" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,6 +61,19 @@
       <option name="presentableId" value="Default" />
       <updated>1762697216605</updated>
     </task>
+    <task id="LOCAL-00001" summary="qje">
+      <option name="closed" value="true" />
+      <created>1765434467013</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1765434467013</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="qje" />
+    <option name="LAST_COMMIT_MESSAGE" value="qje" />
   </component>
 </project>

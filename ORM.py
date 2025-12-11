@@ -17,7 +17,7 @@ class Student(Base):
     stud_id = Column(Integer, primary_key=True)
     Name = Column(String)
     birth = Column(Date)
-    records = relationship("Record", back_populates="student", cascade="all, delete-orphan")
+    records = relationship("Record", back_populates="student", cascade="all")
 
 
 class Teacher(Base):
@@ -25,7 +25,7 @@ class Teacher(Base):
     tch_id = Column(Integer, primary_key=True)
     Name = Column(String)
     birth = Column(Date)
-    subjects = relationship("Subject", back_populates="teacher", cascade="all, delete-orphan")
+    subjects = relationship("Subject", back_populates="teacher", cascade="all")
 
 
 class Subject(Base):
@@ -36,7 +36,7 @@ class Subject(Base):
     tch_id = Column(Integer, ForeignKey("Teacher.tch_id", ondelete="CASCADE",onupdate="CASCADE"))
 
     teacher = relationship("Teacher", back_populates="subjects")
-    records = relationship("Record", back_populates="subject", cascade="all, delete-orphan")
+    records = relationship("Record", back_populates="subject", cascade="all")
 
 
 class Record(Base):
